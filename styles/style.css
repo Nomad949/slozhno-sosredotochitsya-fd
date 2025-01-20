@@ -4,15 +4,34 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   display: grid;
   grid-template-columns: 1fr;
+  background-image: var(--theme-dark);
 }
 
 .header {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  padding-inline: 10px;
 }
 
 .decorated-zone {
+  position: absolute;
+  width: 33px;
+  height: 26px;
+  align-self: end;
+  top: 10px;
+  right: 30px;
+}
 
+.decorated-zone::after{
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: - 20px;
+  display: inline-block;
+  border-top: 2px solid red;
+  border-right: 2px solid red;
+  height: 25px;
+  width: 25px;
 }
 
 .header__theme-menu {
@@ -22,7 +41,15 @@
 .header__theme-menu-list {
   display: grid;
   gap: 10px;
-  
+  padding-block-start: 75px;
+}
+
+.header__theme-menu-item {
+
+}
+
+.header__theme-menu-button {
+
 }
 
 .header__title {
