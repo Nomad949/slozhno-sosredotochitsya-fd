@@ -11,6 +11,8 @@
   grid-template-columns: 1fr;
 }
 
+
+/* decor */
 .decorated-zone {
 
 }
@@ -41,3 +43,5 @@
 .title-decor {
   background-color: var(--accent-color);
 }
+
+/* current */
