@@ -7,13 +7,33 @@
   background-image: var(--theme-dark);
   background-position: center;
   background-attachment: fixed;
+  padding-inline: 10px;
 }
 
 .header {
   display: grid;
-  position: relative;
   grid-template-rows: 1fr min-content 1fr;
-  padding-inline: 10px;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  top: 10px;
+  right: 10px;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+  bottom: -20px;
 }
 
 .header__decor-rec {
@@ -25,8 +45,8 @@
 .header__decor-rec::before {
   content: "REC";
   position: absolute;
-  top: 3px;
-  right: 15px;
+  top: 1px;
+  right: 17px;
   font-family: var(--main-font-family), sans-serif;
   font-size: 18px;
   color: var(--accent-color);
@@ -43,18 +63,6 @@
   background-color: var(--accent-color);
 }
 
-/*.decorated-zone::after{
-  content: "";
-  position: absolute;
-  top: -5px;
-  right: - 20px;
-  display: inline-block;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
-  height: 25px;
-  width: 25px;
-} */
-
 .header__theme-menu {
   justify-self: end;
 }
@@ -62,14 +70,15 @@
 .header__theme-menu-list {
   display: grid;
   gap: 10px;
-  padding-block-start: 75px;
+  padding-block-start: 4.7rem;
 }
 
 .header__theme-menu-item {
-  
+  padding-inline: 10px;
 }
 
 .header__theme-menu-button {
+  font-family: var(--main-font-family), sans-serif;
   color: var(--accent-color);
   background-color: transparent;
   border: none;
@@ -78,6 +87,11 @@
 }
 
 .header__title {
+  display: block;
+  padding-block-start: 4.375rem;
+  padding-block-end: 3.125rem;
+  line-height: 0.83em;
+  font-family: var(--main-font-family), sans-serif;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-transform: lowercase;
   color: var(--title-color);
@@ -85,6 +99,7 @@
 }
 
 .header__text {
+  block-size: min-content;
   font-size: 18px;
   font-family: var(--main-font-family), sans-serif;
   font-weight: 700;
@@ -92,4 +107,31 @@
 
 .title-decor {
   background-color: var(--accent-color);
+}
+
+
+/*main*/
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--main-font-family);
+  font-size: var(--main-font-size);
+}
+
+.question__1 {
+  font-size: inherit;
+  color: var(--accent-color);
+  padding-block-start: 55px;
+}
+
+.subtitle {
+  font-size: inherit;
+  margin-block-start: 20px;
+}
+
+.answer-text {
+  color: var(--answer-text-color);
+  padding-block-start: 10px;
+  line-height: 23.4px;
 }
