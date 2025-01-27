@@ -131,22 +131,35 @@
 
 /*main*/
 
-.section {
+.content {
   display: flex;
   flex-direction: column;
+  gap: 50px;
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
   line-height: var(--main-line-height);
+  padding-block-start: 40px;
+}
+
+.section-why,
+.section-what,
+.section-how,
+.section-gallery {
+  display: grid;
+}
+
+.articles-why,
+.articles-what,
+.articles-how {
+  display: grid;
+  gap: 20px;
 }
 
 .section__title {
+  display: block;
   font-size: inherit;
   color: var(--accent-color);
-  padding-block-start: 3.125rem;
-}
-
-.section__title-margin {
-  padding-block-start: 40px;
+  margin-block-end: 1.25rem;
 }
 
 .article {
@@ -156,12 +169,15 @@
 
 .article__title {
   font-size: inherit;
-  margin-block-start: 1.25rem;
+}
+
+.article__title-margin {
+  margin-block-start: 20px;
 }
 
 .article__text {
-  padding-block-start: 10px;
   color: var(--text-color);
+  padding-block-start: 10px;
 }
 
 .article__text-link {
@@ -182,10 +198,6 @@
   font-weight: 400;
 }
 
-.article__title_margin {
-  margin-block-start: 50px;
-}
-
 
 /*gallery*/
 
@@ -200,6 +212,11 @@
   object-fit: cover;
   object-position: center;
 }
+
+.gallery__title {
+  font-size: inherit;
+}
+
 
 /*footer*/
 
@@ -221,24 +238,61 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
+
+/*media requests*/
+
 @media (width >= 768px) {
+
   .page {
     padding-inline: 20px;
   }
 
-  .header {
-    padding-inline-end: 0px;
+  .decorated-zone::before {
+    top: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+  }
+
+  .header__decor-rec {
+    top: 20px;
+  }
+  
+  .header__title {
+    font-size: (7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-inline-start: -20px;
   }
 
   .header__text {
-    inline-size: 22.75rem;
+    max-inline-size: 22.75rem;
     justify-self: end;
   }
 
-  .section {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+  .content {
+    padding-block-start: 60px;
+    gap: 80px;
   }
+
+  .section-why,
+  .section-how {
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .section-what {
+    grid-template-rows: min-content 1fr;
+  }
+
+  .section-what .section__title {
+    max-inline-size: 236px;
+  }
+
+  .gallery {
+    gap: 20px;
+    padding-block-start: 20px;
+  }
+
 }
 
 @media (width >= 1024px) {
