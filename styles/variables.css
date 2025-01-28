@@ -6,8 +6,11 @@
   --background-image: url(../images/cover-image-dark.png);
   --title-color: #DB00FF;
   --accent-color: #FF0070;
+  --article-title-color: #FF0070;
   --text-color: #F1B2CE;
   --main-font-family: 'IBM Plex mono';
   --main-font-size: 18px;
   --main-line-height: 1.4625rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
 }
