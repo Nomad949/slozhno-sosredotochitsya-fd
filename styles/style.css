@@ -4,7 +4,8 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   display: grid;
   grid-template-columns: 1fr;
-  background-image: var(--theme-dark);
+  gap: 40px;
+  background-image: var(--background-image);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -79,7 +80,7 @@
 }
 
 .header__theme-menu-item {
-  padding-inline: 10px;
+  inline-size: 70px;
 }
 
 .header__theme-menu-button {
@@ -87,8 +88,10 @@
   color: var(--accent-color);
   background-color: transparent;
   border: none;
-  font-size: 18px;
+  font-size: var(--main-font-size);
+  line-height: 18px;
   text-transform: lowercase;
+  padding: 3px 13px 3px 13px;
 }
 
 .header__theme-menu-button:hover {
@@ -139,7 +142,6 @@
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
   line-height: var(--main-line-height);
-  padding-block-start: 40px;
 }
 
 .section-why,
@@ -213,7 +215,8 @@
 }
 
 .gallery__list-item {
-  width: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -230,7 +233,6 @@
   position: relative;
   block-size: 100vh;
   grid-template-columns: 1fr;
-  margin-block-start: 40px;
 }
 
 .footer__title {
@@ -252,6 +254,7 @@
 
   .page {
     padding-inline: 20px;
+    gap: 60px;
   }
 
   .decorated-zone::before {
@@ -265,19 +268,23 @@
   .header__decor-rec {
     top: 20px;
   }
+
+  .header__theme-menu {
+    padding-block-start: 13px;
+  }
   
   .header__title {
-    font-size: (7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     margin-inline-start: -20px;
   }
 
   .header__text {
     max-inline-size: 22.75rem;
     justify-self: end;
+    margin-block-end: 20px;
   }
 
   .content {
-    padding-block-start: 60px;
     gap: 80px;
   }
 
@@ -302,6 +309,7 @@
   .gallery__list {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    max-block-size: 780px;
     gap: 20px;
   }
 
@@ -327,37 +335,55 @@
   }
 
   .gallery__list-item:nth-child(5) {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
+
+  .footer {
+    max-block-size: 1024px;
   }
 
   .footer__title {
-    font-size: (7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
 }
 
 @media (width >= 1024px) {
 
-  .header__theme-menu-list {
-    flex-direction: row;
-  }
-
   .header__theme-menu {
     align-self: start;
     justify-self: center;
+    padding-block-start: 20px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
   }
 
   .header__text {
     max-inline-size: 30.6875rem;
   }
 
-  .section-what {
-    grid-template-rows: min-content 1fr;
+  .section-why,
+  .section-how {
+    gap: 12px;
+  }
+
+  .section-what .section__title {
+    max-inline-size: 315px;
   }
 
   .articles-what {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery__list {
+    max-block-size: 1048px;
+  }
+
+  .footer {
+    max-block-size: 768px;
   }
 
 }
