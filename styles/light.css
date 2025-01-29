@@ -11,37 +11,29 @@
   */
 
   --background-image: url(../images/cover-image-light.png);
+  --background-color: #fff1f7;
   --title-color: #FFC2E6;
   --accent-color: #FF8DCB;
-  --article-title-color: #353430;
+  --section-title-color: #353430;
   --text-color: #353430;
-  --main-font-family: 'IBM Plex mono';
-  --main-font-size: 18px;
-  --main-line-height: 1.4625rem;
+  --article-title-color: #353430;
+  --theme-menu-button-hover: rgba(50, 49, 45, 0.4);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
   --background-image: url(../images/cover-image-light.png);
+  --background-color: #fff1f7;
   --title-color: #FFC2E6;
   --accent-color: #FF8DCB;
-  --article-title-color: #353430;
+  --section-title-color: #353430;
   --text-color: #353430;
-  --main-font-family: 'IBM Plex mono';
-  --main-font-size: 18px;
-  --main-line-height: 1.4625rem;
+  --article-title-color: #353430;
+  --theme-menu-button-hover: rgba(50, 49, 45, 0.4);
     }
   }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-
-  .header__decor-rec {
+.theme-light .header__decor-rec {
     display: none;
-  }
+    }
   
-  .header__theme-menu-button:hover {
-    outline: 1px solid rgba(50, 49, 45, 0.4);
-    cursor: pointer;
-  }
-}
