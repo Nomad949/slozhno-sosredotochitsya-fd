@@ -18,6 +18,7 @@
   position: relative;
   grid-template-rows: 1fr min-content 1fr;
   block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .decorated-zone::before {
@@ -97,6 +98,10 @@
 .header__theme-menu-button:hover {
   outline: 1px solid rgba(255, 0, 112, 0.4);
   cursor: pointer;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
 }
 
 .header__theme-menu-button:focus-visible {
@@ -194,6 +199,10 @@
   text-decoration: underline;
 }
 
+.article__text-link:focus {
+  outline: none;
+}
+
 .article__text-link:focus-visible {
   outline: 1px solid var(--text-color);
 }
@@ -232,7 +241,8 @@
 .footer {
   display: grid;
   position: relative;
-  block-size: 668px;
+  block-size: 100vh;
+  min-block-size: 668px;
   grid-template-columns: 1fr;
 }
 
