@@ -31,9 +31,12 @@
   --article-title-color: #353430;
   --theme-menu-button-hover: rgba(50, 49, 45, 0.4);
     }
+
+    .theme-auto .header__decor-rec {
+      display: none;
+      }
   }
 
-.theme-light .header__decor-rec {
+  .theme-light .header__decor-rec {
     display: none;
     }
-  
